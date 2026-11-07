@@ -11,15 +11,15 @@ This kit connects any agent to the free [Dinero en la Mesa](https://dineroenlame
 **MCP** (Claude, Cursor, any MCP client) — remote server, streamable HTTP:
 
 ```
-https://dineroenlamesa.com/agents/mcp
+https://dineroenlamesa.com/agents/mcp?c=kit-github
 ```
 
-- Claude Code: `claude mcp add --transport http dineroenlamesa https://dineroenlamesa.com/agents/mcp`
+- Claude Code: `claude mcp add --transport http dineroenlamesa https://dineroenlamesa.com/agents/mcp?c=kit-github`
 - Claude (desktop or web): Settings → Connectors → Add custom connector → paste the URL above.
 - Cursor (`~/.cursor/mcp.json`):
 
 ```json
-{ "mcpServers": { "dineroenlamesa": { "url": "https://dineroenlamesa.com/agents/mcp" } } }
+{ "mcpServers": { "dineroenlamesa": { "url": "https://dineroenlamesa.com/agents/mcp?c=kit-github" } } }
 ```
 
 **Plain HTTP** — same tools, `GET https://dineroenlamesa.com/agents/api/<tool>?...` ([OpenAPI](https://dineroenlamesa.com/agents/openapi.json)).
