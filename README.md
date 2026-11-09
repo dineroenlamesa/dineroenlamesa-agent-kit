@@ -54,8 +54,12 @@ The only funding scanner that nets every gap against the real cost of opening an
 |---|---|---|
 | `delta_neutral_scanner` | 0.10 USDC per scan | Every pair and every venue couple, read every minute, net of opening and closing both legs on the live books, with how long each gap has been open and how long past gaps lasted |
 | `cost_per_point` | 0.05 USDC per call | Airdrop points per dollar of fees on every perp DEX with a published weekly pool, this week |
+| `execution_plan` | 1 USDC per plan, **only if it saves $20 or more** | How to split a large order across venues, leg by leg, against doing it all on the cheapest one. Below $20 of saving the plan is free |
+| `farming_route` | 0.50 USDC per route | What your weekly farming budget buys on each perp DEX with a points pool: volume at your order size on the live book (fees + slippage) and your share of the pool once your volume dilutes it |
+| `alerts` | 29 USDC per 30 days, up to 3 pairs | A signed webhook the minute a net funding gap or a trading cost crosses your threshold, checked every minute. We test your webhook first: no answer, no charge |
+| `history` | 0.10 USDC per series, from 10 December 2026 | Funding, round-trip cost and spread per venue, hourly as we read them, to backtest a strategy |
 
-USDC on Base, no account. The first call returns the price and what you get; the same call with the signed payment returns the result. Not charged if the data is stale.
+USDC on Base, no account. The first call returns the price and what you get; the same call with the signed payment returns the result. Not charged if the data is stale, and `execution_plan`, `farming_route` and `history` answer free on the first call when there is nothing worth paying for.
 
 **How to pay:** In Claude: add the Base connector (mcp.base.org), sign in with your Coinbase account and ask for the scan; you approve 0.10 USDC in Coinbase Wallet. Any x402 client or wallet that signs USDC on Base works the same way.
 

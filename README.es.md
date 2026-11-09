@@ -54,8 +54,12 @@ El único escáner de funding que descuenta de cada hueco el coste real de abrir
 |---|---|---|
 | `delta_neutral_scanner` | 0,10 USDC por escaneo | Todos los pares y todas las parejas de plataformas, cada minuto, netos de abrir y cerrar las dos patas en los libros reales, con cuánto lleva abierto cada hueco y cuánto duraron los anteriores |
 | `cost_per_point` | 0,05 USDC por consulta | Puntos de airdrop por dólar de comisiones en cada perp DEX con bolsa semanal publicada, esta semana |
+| `execution_plan` | 1 USDC por plan, **solo si ahorra 20 $ o más** | Cómo repartir una orden grande entre plataformas, pierna a pierna, frente a hacerla entera en la más barata. Si ahorra menos de 20 $, el plan es gratis |
+| `farming_route` | 0,50 USDC por ruta | Lo que compra tu presupuesto semanal de farmeo en cada perp DEX con bolsa de puntos: volumen al coste de tu tamaño en el libro de ahora (comisión + deslizamiento) y tu parte de la bolsa cuando tu volumen la diluye |
+| `alerts` | 29 USDC por 30 días, hasta 3 pares | Un webhook firmado en el minuto en que un hueco de funding neto o un coste cruza tu umbral, mirado cada minuto. Antes probamos tu webhook: si no contesta, no se cobra |
+| `history` | 0,10 USDC por serie, desde el 10 de diciembre de 2026 | Funding, coste de ida y vuelta y horquilla de cada plataforma, cada hora tal como los leímos, para probar una estrategia |
 
-USDC en Base, sin cuenta. La primera llamada devuelve el precio y lo que recibes; la misma llamada con el pago firmado devuelve el resultado. No se cobra si el dato no está fresco.
+USDC en Base, sin cuenta. La primera llamada devuelve el precio y lo que recibes; la misma llamada con el pago firmado devuelve el resultado. No se cobra si el dato no está fresco, y `execution_plan`, `farming_route` y `history` contestan gratis a la primera cuando no hay nada que merezca pago.
 
 **Cómo se paga:** En Claude: añade el conector de Base (mcp.base.org), entra con tu cuenta de Coinbase y pide el escáner; apruebas 0,10 USDC en Coinbase Wallet. Cualquier cliente x402 o cartera que firme USDC en Base sirve igual.
 

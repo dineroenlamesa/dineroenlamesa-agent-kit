@@ -54,8 +54,12 @@ O único scanner de funding que desconta de cada diferença o custo real de abri
 |---|---|---|
 | `delta_neutral_scanner` | 0,10 USDC por varredura | Todos os pares e todas as duplas de plataformas, a cada minuto, líquidos de abrir e fechar as duas pernas nos livros reais, com há quanto tempo cada diferença está aberta e quanto duraram as anteriores |
 | `cost_per_point` | 0,05 USDC por consulta | Pontos de airdrop por dólar de taxas em cada perp DEX com pool semanal publicado, nesta semana |
+| `execution_plan` | 1 USDC por plano, **só se economizar US$ 20 ou mais** | Como dividir uma ordem grande entre plataformas, perna a perna, contra fazê-la inteira na mais barata. Abaixo de US$ 20 de economia, o plano é grátis |
+| `farming_route` | 0,50 USDC por rota | O que o seu orçamento semanal de farming compra em cada perp DEX com pool de pontos: volume ao custo do seu tamanho no livro de agora (taxa + slippage) e a sua parte do pool quando o seu volume o dilui |
+| `alerts` | 29 USDC por 30 dias, até 3 pares | Um webhook assinado no minuto em que uma diferença de funding líquida ou um custo cruza o seu limite, verificado a cada minuto. Antes testamos o seu webhook: se não responder, não é cobrado |
+| `history` | 0,10 USDC por série, a partir de 10 de dezembro de 2026 | Funding, custo de ida e volta e spread de cada plataforma, a cada hora como os lemos, para testar uma estratégia |
 
-USDC na Base, sem conta. A primeira chamada devolve o preço e o que você recebe; a mesma chamada com o pagamento assinado devolve o resultado. Não é cobrado se o dado não estiver atualizado.
+USDC na Base, sem conta. A primeira chamada devolve o preço e o que você recebe; a mesma chamada com o pagamento assinado devolve o resultado. Não é cobrado se o dado não estiver atualizado, e `execution_plan`, `farming_route` e `history` respondem grátis na primeira chamada quando não há nada que valha o pagamento.
 
 **Como pagar:** No Claude: adicione o conector da Base (mcp.base.org), entre com a sua conta da Coinbase e peça o scanner; você aprova 0,10 USDC na Coinbase Wallet. Qualquer cliente x402 ou carteira que assine USDC na Base funciona igual.
 
