@@ -4,7 +4,7 @@
 
 Antes de abrir um perpétuo, o seu agente deveria saber **onde é mais barato operar, com tudo incluído**: a taxa taker das duas pernas mais o slippage de percorrer o livro de ofertas real, em 28 perp DEX, com a hora de cada leitura.
 
-Este kit conecta qualquer agente ao servidor gratuito da [Dinero en la Mesa](https://dineroenlamesa.com/pt/agents/). Sem chave e sem conta.
+Este kit conecta qualquer agente ao servidor da [Dinero en la Mesa](https://dineroenlamesa.com/pt/agents/): ferramentas grátis e ferramentas Pro pagas por consulta. Sem chave e sem conta.
 
 ## Conectar
 
@@ -41,11 +41,23 @@ Ele pede a plataforma mais barata para a operação, a segunda, e o melhor par d
 | `funding_rates` | O funding em todas, convertido para 8 h |
 | `depth` | Spread e profundidade a ±0,5% e ±1% |
 | `delta_neutral` | O melhor par long/short, líquido de custos |
-| `cost_per_point` | Pontos de airdrop por dólar de taxas, nesta semana |
 | `live_airdrops` · `changes` | Campanhas abertas e o que mudou |
 | `list_venues` · `signup_link` | Plataformas cobertas e como abrir conta |
 
 A ordem é só pelo custo. Alguns links de abertura de conta levam o nosso código de indicação; isso nunca muda a posição de uma plataforma.
+
+## Pro — pago por consulta (x402)
+
+O único scanner de funding que desconta de cada diferença o custo real de abrir e fechar as duas pernas nos livros ao vivo: 23 perp DEX, a cada minuto, e quanto costuma durar cada diferença.
+
+| Ferramenta | Preço | O que responde |
+|---|---|---|
+| `delta_neutral_scanner` | 0,10 USDC por varredura | Todos os pares e todas as duplas de plataformas, a cada minuto, líquidos de abrir e fechar as duas pernas nos livros reais, com há quanto tempo cada diferença está aberta e quanto duraram as anteriores |
+| `cost_per_point` | 0,05 USDC por consulta | Pontos de airdrop por dólar de taxas em cada perp DEX com pool semanal publicado, nesta semana |
+
+USDC na Base, sem conta. A primeira chamada devolve o preço e o que você recebe; a mesma chamada com o pagamento assinado devolve o resultado. Não é cobrado se o dado não estiver atualizado.
+
+**Como pagar:** No Claude: adicione o conector da Base (mcp.base.org), entre com a sua conta da Coinbase e peça o scanner; você aprova 0,10 USDC na Coinbase Wallet. Qualquer cliente x402 ou carteira que assine USDC na Base funciona igual.
 
 ## Termos
 

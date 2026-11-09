@@ -4,7 +4,7 @@
 
 Antes de abrir un perpetuo, tu agente debería saber **dónde le sale más barato, con todo incluido**: la comisión taker de las dos patas más el deslizamiento de recorrer el libro de órdenes real, en 28 perp DEX, con la hora de cada lectura.
 
-Este kit conecta cualquier agente con el servidor gratuito de [Dinero en la Mesa](https://dineroenlamesa.com/es/agents/). Sin clave y sin cuenta.
+Este kit conecta cualquier agente con el servidor de [Dinero en la Mesa](https://dineroenlamesa.com/es/agents/): herramientas gratis y herramientas Pro de pago por consulta. Sin clave y sin cuenta.
 
 ## Conectar
 
@@ -41,11 +41,23 @@ Pide la plataforma más barata para la operación, la segunda, y la mejor pareja
 | `funding_rates` | El funding en todas, llevado a 8 h |
 | `depth` | Diferencial y profundidad a ±0,5 % y ±1 % |
 | `delta_neutral` | La mejor pareja largo/corto, neta de costes |
-| `cost_per_point` | Puntos de airdrop por dólar de comisiones, esta semana |
 | `live_airdrops` · `changes` | Campañas abiertas y qué ha cambiado |
 | `list_venues` · `signup_link` | Plataformas cubiertas y cómo abrir cuenta |
 
 El orden es solo por coste. Algunos enlaces de alta llevan nuestro código de referido; eso nunca cambia la posición de una plataforma.
+
+## Pro — de pago por consulta (x402)
+
+El único escáner de funding que descuenta de cada hueco el coste real de abrir y cerrar las dos patas en los libros en vivo: 23 perp DEX, cada minuto, y cuánto suele durar cada hueco.
+
+| Herramienta | Precio | Qué responde |
+|---|---|---|
+| `delta_neutral_scanner` | 0,10 USDC por escaneo | Todos los pares y todas las parejas de plataformas, cada minuto, netos de abrir y cerrar las dos patas en los libros reales, con cuánto lleva abierto cada hueco y cuánto duraron los anteriores |
+| `cost_per_point` | 0,05 USDC por consulta | Puntos de airdrop por dólar de comisiones en cada perp DEX con bolsa semanal publicada, esta semana |
+
+USDC en Base, sin cuenta. La primera llamada devuelve el precio y lo que recibes; la misma llamada con el pago firmado devuelve el resultado. No se cobra si el dato no está fresco.
+
+**Cómo se paga:** En Claude: añade el conector de Base (mcp.base.org), entra con tu cuenta de Coinbase y pide el escáner; apruebas 0,10 USDC en Coinbase Wallet. Cualquier cliente x402 o cartera que firme USDC en Base sirve igual.
 
 ## Condiciones
 

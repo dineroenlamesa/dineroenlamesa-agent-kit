@@ -4,7 +4,7 @@
 
 Before your agent opens a perp, it should know **where it is cheapest to trade it, all-in**: taker fee on both legs plus the slippage of walking the live order book, on 28 perp DEXs, with the time of every read.
 
-This kit connects any agent to the free [Dinero en la Mesa](https://dineroenlamesa.com/agents/) server. No key, no account.
+This kit connects any agent to the [Dinero en la Mesa](https://dineroenlamesa.com/agents/) server: free tools, and Pro tools paid per call. No key, no account.
 
 ## Connect
 
@@ -41,11 +41,23 @@ It asks for the cheapest venue for the trade, the runner-up, and the best delta-
 | `funding_rates` | Funding across venues, normalised to 8 h |
 | `depth` | Spread and depth at ±0.5 % and ±1 % |
 | `delta_neutral` | Best long/short funding pair, net of costs |
-| `cost_per_point` | Airdrop points per dollar of fees, this week |
 | `live_airdrops` · `changes` | Open campaigns and what changed |
 | `list_venues` · `signup_link` | Venues covered and how to open an account |
 
 The ranking is by cost only. Some account links carry our referral code; that never changes a venue's position.
+
+## Pro — paid per call (x402)
+
+The only funding scanner that nets every gap against the real cost of opening and closing both legs on live order books — 23 perp DEXs, every minute, with how long each gap usually lasts.
+
+| Tool | Price | What it answers |
+|---|---|---|
+| `delta_neutral_scanner` | 0.10 USDC per scan | Every pair and every venue couple, read every minute, net of opening and closing both legs on the live books, with how long each gap has been open and how long past gaps lasted |
+| `cost_per_point` | 0.05 USDC per call | Airdrop points per dollar of fees on every perp DEX with a published weekly pool, this week |
+
+USDC on Base, no account. The first call returns the price and what you get; the same call with the signed payment returns the result. Not charged if the data is stale.
+
+**How to pay:** In Claude: add the Base connector (mcp.base.org), sign in with your Coinbase account and ask for the scan; you approve 0.10 USDC in Coinbase Wallet. Any x402 client or wallet that signs USDC on Base works the same way.
 
 ## Terms
 
