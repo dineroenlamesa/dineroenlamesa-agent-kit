@@ -1,0 +1,28 @@
+{
+  "name": "dineroenlamesa",
+  "description": "Dinero en la Mesa — perp DEX costs for AI agents: cheapest venue all-in on the live order books, funding rates and delta-neutral pairs across 28 perp DEXs. Connects the remote server and adds the skill that tells the agent when to use it.",
+  "version": "1.3.0",
+  "author": {
+    "name": "Dinero en la Mesa",
+    "url": "https://dineroenlamesa.com/agents/"
+  },
+  "homepage": "https://dineroenlamesa.com/agents/",
+  "repository": "https://github.com/dineroenlamesa/dineroenlamesa-agent-kit",
+  "license": "MIT",
+  "keywords": [
+    "perp-dex",
+    "trading-costs",
+    "funding-rates",
+    "delta-neutral",
+    "hyperliquid",
+    "airdrops",
+    "x402"
+  ],
+  "privacyPolicyUrl": "https://dineroenlamesa.com/legal/",
+  "mcpServers": {
+    "dineroenlamesa": {
+      "type": "http",
+      "url": "https://dineroenlamesa.com/agents/mcp?c=plugin"
+    }
+  }
+}

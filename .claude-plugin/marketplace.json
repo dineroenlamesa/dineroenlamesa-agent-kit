@@ -1,0 +1,12 @@
+{
+  "name": "dineroenlamesa",
+  "description": "Dinero en la Mesa — perp DEX costs for AI agents",
+  "owner": { "name": "Dinero en la Mesa", "url": "https://dineroenlamesa.com" },
+  "plugins": [
+    {
+      "name": "dineroenlamesa",
+      "source": "./",
+      "description": "Cheapest perp DEX for a trade, all-in on the live order books, funding rates and delta-neutral pairs across 28 perp DEXs. Free; Pro tools paid per call in USDC (x402)."
+    }
+  ]
+}
