@@ -22,6 +22,11 @@ https://dineroenlamesa.com/agents/mcp?c=kit-github
 { "mcpServers": { "dineroenlamesa": { "url": "https://dineroenlamesa.com/agents/mcp?c=kit-github" } } }
 ```
 
+**As a skill or a plugin** — the agent learns *when* to ask, before every perp trade:
+
+- Any agent (Claude Code, Codex, Cursor and 40 more): `npx skills add dineroenlamesa/dineroenlamesa-agent-kit`
+- Claude Code plugin (connects the server and adds the skill): `/plugin marketplace add dineroenlamesa/dineroenlamesa-agent-kit`, then `/plugin install dineroenlamesa@dineroenlamesa`
+
 **Plain HTTP** — same tools, `GET https://dineroenlamesa.com/agents/api/<tool>?...` ([OpenAPI](https://dineroenlamesa.com/agents/openapi.json)).
 
 ## Example: an agent that checks before it trades

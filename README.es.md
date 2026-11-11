@@ -22,6 +22,11 @@ https://dineroenlamesa.com/agents/mcp?c=kit-github
 { "mcpServers": { "dineroenlamesa": { "url": "https://dineroenlamesa.com/agents/mcp?c=kit-github" } } }
 ```
 
+**Como habilidad o como plugin** — el agente aprende *cuándo* preguntar, antes de cada operación de perpetuos:
+
+- Cualquier agente (Claude Code, Codex, Cursor y 40 más): `npx skills add dineroenlamesa/dineroenlamesa-agent-kit`
+- Plugin de Claude Code (conecta el servidor y añade la habilidad): `/plugin marketplace add dineroenlamesa/dineroenlamesa-agent-kit` y después `/plugin install dineroenlamesa@dineroenlamesa`
+
 **HTTP sencillo** — las mismas herramientas, `GET https://dineroenlamesa.com/agents/api/<herramienta>?...` ([OpenAPI](https://dineroenlamesa.com/agents/openapi.json)).
 
 ## Ejemplo: un agente que mira antes de operar
