@@ -1,5 +1,7 @@
 # Dinero en la Mesa — perp DEX costs for AI agents
 
+[![Dinero en la Mesa MCP connector](https://glama.ai/mcp/connectors/com.dineroenlamesa/perp-dex-costs/badges/score.svg)](https://glama.ai/mcp/connectors/com.dineroenlamesa/perp-dex-costs)
+
 **English** · [Español](README.es.md) · [Português](README.pt-BR.md)
 
 Before your agent opens a perp, it should know **where it is cheapest to trade it, all-in**: taker fee on both legs plus the slippage of walking the live order book, on 28 perp DEXs, with the time of every read.
